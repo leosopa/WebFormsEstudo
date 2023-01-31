@@ -24,6 +24,15 @@ namespace WebFormsEstudo.Cadastros
         protected global::System.Web.UI.WebControls.TextBox txtTitulo;
 
         /// <summary>
+        /// rfvTitulo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTitulo;
+
+        /// <summary>
         /// txtDiretor control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace WebFormsEstudo.Cadastros
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDiretor;
+
+        /// <summary>
+        /// rfvDiretor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDiretor;
 
         /// <summary>
         /// txtAno control.
@@ -42,6 +60,15 @@ namespace WebFormsEstudo.Cadastros
         protected global::System.Web.UI.WebControls.TextBox txtAno;
 
         /// <summary>
+        /// rfvAno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAno;
+
+        /// <summary>
         /// txtUrl control.
         /// </summary>
         /// <remarks>
@@ -49,6 +76,24 @@ namespace WebFormsEstudo.Cadastros
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUrl;
+
+        /// <summary>
+        /// rfvImdb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvImdb;
+
+        /// <summary>
+        /// vlsFilme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vlsFilme;
 
         /// <summary>
         /// btnCadastrar control.

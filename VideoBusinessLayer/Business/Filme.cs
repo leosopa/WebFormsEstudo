@@ -11,30 +11,32 @@ namespace VideoBusinessLayer.Business
     public class Filme
     {
         private FilmeEntityDAO filmes;
+        private FilmeAdoDAO filmesAdo;
 
         public Filme()
         {
             filmes = new FilmeEntityDAO();
+            filmesAdo = new FilmeAdoDAO();
         }
 
         public bool Salvar(FilmeDTO filme)
         {
-            return filmes.Insert(filme);
+            return filmesAdo.Insert(filme);
         }
 
         public bool Atualizar(FilmeDTO filme)
         {
-            return filmes.Update(filme);
+            return filmesAdo.Update(filme);
         }
 
         public bool Remover(int filme)
         {
-            return filmes.Delete(filme);
+            return filmesAdo.Delete(filme);
         }
 
         public List<FilmeDTO> Listar()
         {
-            return filmes.Select();
+            return filmesAdo.Select();
         }
 
     }

@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
         <h2>Lista de Filmes</h2>
+        <p> Aqui você encontra seus filmes cadastrados e pode editá-los ou excluí-los:</p>
         
     </div>
     <div class="row-no-gutters">
