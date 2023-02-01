@@ -7,7 +7,7 @@ using VideoBusinessLayer.DTO;
 
 namespace VideoBusinessLayer.Models
 {
-    internal interface IFilmeDAO
+    public interface IFilmeDAO
     {
 
         bool Insert(FilmeDTO filme);

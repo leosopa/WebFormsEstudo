@@ -15,6 +15,15 @@ namespace WebFormsEstudo.Cadastros
     {
 
         /// <summary>
+        /// pnlCadastro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlCadastro;
+
+        /// <summary>
         /// txtTitulo control.
         /// </summary>
         /// <remarks>
@@ -105,6 +114,15 @@ namespace WebFormsEstudo.Cadastros
         protected global::System.Web.UI.WebControls.Button btnCadastrar;
 
         /// <summary>
+        /// pnlResultado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlResultado;
+
+        /// <summary>
         /// lblResultado control.
         /// </summary>
         /// <remarks>
@@ -112,5 +130,14 @@ namespace WebFormsEstudo.Cadastros
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResultado;
+
+        /// <summary>
+        /// btnVoltar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVoltar;
     }
 }

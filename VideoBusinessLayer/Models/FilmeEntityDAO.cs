@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using VideoBusinessLayer.DTO;
 
 namespace VideoBusinessLayer.Models
 {
-    internal class FilmeEntityDAO
+    internal class FilmeEntityDAO: IFilmeDAO
     {
 
         public bool Insert(FilmeDTO filme)
@@ -20,19 +21,6 @@ namespace VideoBusinessLayer.Models
             }
             return true;
         }
-
-        private FILMES GetFilmeModel(FilmeDTO filmeDTO)
-        {
-            FILMES filme = new FILMES();
-            filme.ID = filmeDTO.Id;
-            filme.TITULO = filmeDTO.Titulo;
-            filme.URL_IMDB = filmeDTO.URL;
-            filme.DIRETOR = filmeDTO.Diretor;
-            filme.ANO = filmeDTO.Ano;
-
-            return filme;
-        }
-
         public bool Update(FilmeDTO filmeDTO)
         {
             using (Models.Entities ctxFilmes = new Models.Entities())
@@ -54,32 +42,38 @@ namespace VideoBusinessLayer.Models
 
         public List<FilmeDTO> Select()
         {
-            return GetListFilmeDTO();
-        }
-
-        private List<FilmeDTO> GetListFilmeDTO()
-        {
-            List<FilmeDTO> filmes = new List<FilmeDTO>();
             using (Models.Entities ctxFilmes = new Models.Entities())
             {
-                foreach (var filme in ctxFilmes.FILMES)
-                {
-                    FilmeDTO filmeDTO = new FilmeDTO();
-                    filmeDTO.Id = int.Parse(filme.ID.ToString());
-                    filmeDTO.Titulo = filme.TITULO;
-                    filmeDTO.URL = filme.URL_IMDB;
-                    filmeDTO.Diretor = filme.DIRETOR;
-                    filmeDTO.Ano = int.Parse(filme.ANO.ToString());
-                    filmes.Add(filmeDTO);
-                }
+                return GetListFilmeDTO(ctxFilmes.FILMES);
             }
-
-            return filmes;
+            
         }
-
         public FilmeDTO Select(int idFilme)
         {
-            return new FilmeDTO();
+            using (Models.Entities ctxFilmes = new Models.Entities())
+            {
+                return GetFilmeDTO(ctxFilmes.FILMES.FirstOrDefault(f => f.ID == idFilme));
+            }
+        }
+
+        private FilmeDTO GetFilmeDTO(FILMES filme)
+        {
+            FilmeDTO filmeDTO = null;
+
+            if (filme != null)
+            {
+                filmeDTO = new FilmeDTO() 
+                    { 
+                        Id = int.Parse(filme.ID.ToString()),
+                        Titulo = filme.TITULO, 
+                        Diretor = filme.DIRETOR, 
+                        Ano = int.Parse(filme.ANO.ToString()),
+                        URL = filme.URL_IMDB 
+                    };
+            }
+
+            return filmeDTO;
+
         }
 
         public bool Delete (int idFilme)
@@ -96,6 +90,41 @@ namespace VideoBusinessLayer.Models
                 ctxFilmes.SaveChanges();
             }
             return true;
+        }
+
+
+        private List<FilmeDTO> GetListFilmeDTO(DbSet<FILMES> filmes)
+        {
+            List<FilmeDTO> filmesDTO = new List<FilmeDTO>();
+            using (Models.Entities ctxFilmes = new Models.Entities())
+            {
+                foreach (var filme in ctxFilmes.FILMES)
+                {
+                    FilmeDTO filmeDTO = new FilmeDTO()
+                    {
+                        Id = int.Parse(filme.ID.ToString()),
+                        Titulo = filme.TITULO,
+                        Diretor = filme.DIRETOR,
+                        Ano = int.Parse(filme.ANO.ToString()),
+                        URL = filme.URL_IMDB
+                    };
+                }
+            }
+
+            return filmesDTO;
+        }
+
+
+        private FILMES GetFilmeModel(FilmeDTO filmeDTO)
+        {
+            FILMES filme = new FILMES();
+            filme.ID = filmeDTO.Id;
+            filme.TITULO = filmeDTO.Titulo;
+            filme.URL_IMDB = filmeDTO.URL;
+            filme.DIRETOR = filmeDTO.Diretor;
+            filme.ANO = filmeDTO.Ano;
+
+            return filme;
         }
 
     }

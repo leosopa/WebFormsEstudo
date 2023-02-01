@@ -2,6 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
+    <h3>Cadastro criado para estudo simples de WebForms + ADO.NET + LINQ.</h3>
+    <p>Este pequeno site foi criado com intuito de demonstrar meus conhecimentos sobre estas tecnologias.</p>
 </asp:Content>

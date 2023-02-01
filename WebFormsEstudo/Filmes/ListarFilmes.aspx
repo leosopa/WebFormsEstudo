@@ -6,8 +6,8 @@
         
     </div>
     <div class="row-no-gutters">
-        <asp:GridView ID="gdvFilmes" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" ForeColor="#333333" GridLines="None" OnRowEditing="gdvFilmes_RowEditing" OnRowUpdating="gdvFilmes_RowUpdating" OnRowDeleting="gdvFilmes_RowDeleting">
-            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <asp:GridView ID="gdvFilmes" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" ForeColor="#333333" OnRowEditing="gdvFilmes_RowEditing" OnRowUpdating="gdvFilmes_RowUpdating" OnRowDeleting="gdvFilmes_RowDeleting">
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775"/>
             <Columns>
                 <asp:TemplateField HeaderText="Titulo">
                     <EditItemTemplate>
@@ -25,7 +25,7 @@
                         <asp:Label ID="lblDiretor" runat="server" Text='<%# Bind("Diretor") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Ano">
+                <asp:TemplateField HeaderText="Ano" ControlStyle-Width="100px" >
                     <EditItemTemplate>
                         <asp:TextBox ID="txtAno" runat="server" Text='<%# Bind("Ano") %>'></asp:TextBox>
                     </EditItemTemplate>
@@ -41,8 +41,27 @@
                         <asp:Label ID="lblUrl" runat="server" Text='<%# Bind("URL") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowEditButton="True" />
-                <asp:CommandField ShowDeleteButton="True" />
+                <asp:TemplateField HeaderText="Edit User">
+                <ItemTemplate>
+                    <asp:LinkButton ID="EditButton"
+                            runat="server"
+                            CssClass="btn btn-info btn-sm"
+                            CommandName="Edit" 
+                            Text="Editar"
+                            Font-Bold="true"
+                            />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Remover Filme">
+               <ItemTemplate>
+                    <asp:LinkButton ID="DeleteButton"
+                            runat="server"
+                            CssClass="btn btn-warning btn-sm"
+                            CommandName="Delete" 
+                            Text="Remover"
+                            Font-Bold="true"/>
+                </ItemTemplate>
+            </asp:TemplateField>
                 <asp:TemplateField InsertVisible="False" Visible="False">
                     <ItemTemplate>
                         <asp:Label ID="lblId" runat="server" Text='<%# Bind("Id") %>'></asp:Label>
@@ -53,7 +72,7 @@
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" HorizontalAlign="Right" />
             <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
             <SortedAscendingCellStyle BackColor="#E9E7E2" />
             <SortedAscendingHeaderStyle BackColor="#506C8C" />

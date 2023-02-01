@@ -35,6 +35,29 @@ namespace WebFormsEstudo.Cadastros
             {
                 lblResultado.Text = "Falha ao realizar o cadastro do filme.";
             }
+            finally
+            {
+                cleanComponents();
+                pnlResultado.Visible = true;
+                pnlCadastro.Visible = false;
+            }
         }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            pnlCadastro.Visible = true;
+            pnlResultado.Visible = false;   
+        }
+
+
+
+        private void cleanComponents()
+        {
+            txtAno.Text = String.Empty;
+            txtDiretor.Text = String.Empty;
+            txtTitulo.Text = String.Empty;
+            txtUrl.Text = String.Empty;
+        }
+
     }
 }

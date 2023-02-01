@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VideoBusinessLayer.Models;
 
 namespace VideoBusinessLayer.Util
 {
@@ -30,6 +31,19 @@ namespace VideoBusinessLayer.Util
                 con.ConnectionString = this.ConnectionString;
                 return con;
             }
+        }
+
+        public IFilmeDAO GetFilmeDAO()
+        {
+            var daoClass = ConfigurationManager.AppSettings["DataAccessClass"].ToString();
+
+            if (daoClass == "ADO")
+                return new FilmeAdoDAO();
+            else if (daoClass == "Entity")
+                return new FilmeEntityDAO();
+
+            return null;
+
         }
     }
 }
