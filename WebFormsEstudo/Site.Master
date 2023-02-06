@@ -52,7 +52,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/Filmes/CadastrarFilmes.aspx">Cadastrar Filme</a></li>
-                        <li><a runat="server" href="~/Filmes/ListarFilmes.asp">ListarFilmes</a></li>
+                        <li><a runat="server" href="~/Filmes/ListarFilmes.asp">Listar Filmes</a></li>
                         <li><a runat="server" href="~/About">Sobre</a></li>
                         <li><a runat="server" href="~/Contact">Contato</a></li>
                     </ul>
